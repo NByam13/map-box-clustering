@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "layers": {
+        "properties": {
+            "source": "mapbox://tileset-source/{mapbox_username}/data",
+            "minzoom": 0,
+            "maxzoom": 16,
+            "features": {
+                "attributes": {
+                    "set": {
+                        "count": 1
+                    }
+                }
+            },
+            "tiles": {
+                "union": [
+                    {
+                        "group_by": [],
+                        "cluster": true,
+                        "region_count": 256,
+                        "aggregate": {
+                            "count": "sum"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

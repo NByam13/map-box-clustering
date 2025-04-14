@@ -1,4 +1,7 @@
 /.phpunit.cache
+/map-box-clustering/.idea
+/.vite
+/bootstrap/ssr
 /node_modules
 /public/build
 /public/hot
@@ -6,11 +9,9 @@
 /storage/*.key
 /storage/pail
 /vendor
-/public/build/*
 .env
 .env.backup
 .env.production
-.env.testing
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
