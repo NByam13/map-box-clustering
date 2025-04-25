@@ -43,44 +43,39 @@ const updateLayerVisibility = () => {
         if (isHighZoom) {
             // At high zoom, use unclustered data for clustered view
             map.value.setLayoutProperty('clustered-points', 'visibility', 'none');
-            // map.value.setLayoutProperty('cluster-count', 'visibility', 'none');
-            // map.value.setLayoutProperty('individual-points', 'visibility', 'none');
             map.value.setLayoutProperty('unclustered-point', 'visibility', 'visible');
             map.value.setLayoutProperty('heatmap-layer', 'visibility', 'none');
             map.value.setLayoutProperty('high-zoom-clustered', 'visibility', 'visible');
+            map.value.setLayoutProperty('high-zoom-heatmap', 'visibility', 'none');
         } else {
             // At low zoom, use clustered data
             map.value.setLayoutProperty('clustered-points', 'visibility', 'visible');
-            // map.value.setLayoutProperty('cluster-count', 'visibility', 'visible');
-            // map.value.setLayoutProperty('individual-points', 'visibility', 'visible');
             map.value.setLayoutProperty('unclustered-point', 'visibility', 'none');
             map.value.setLayoutProperty('heatmap-layer', 'visibility', 'none');
             map.value.setLayoutProperty('high-zoom-clustered', 'visibility', 'none');
+            map.value.setLayoutProperty('high-zoom-heatmap', 'visibility', 'none');
         }
     } else if (visualizationMode.value === 'unclustered') {
         // Always show unclustered points for unclustered mode
         map.value.setLayoutProperty('clustered-points', 'visibility', 'none');
-        // map.value.setLayoutProperty('cluster-count', 'visibility', 'none');
-        // map.value.setLayoutProperty('individual-points', 'visibility', 'none');
         map.value.setLayoutProperty('unclustered-point', 'visibility', 'visible');
         map.value.setLayoutProperty('heatmap-layer', 'visibility', 'none');
         map.value.setLayoutProperty('high-zoom-clustered', 'visibility', 'none');
+        map.value.setLayoutProperty('high-zoom-heatmap', 'visibility', 'none');
     } else if (visualizationMode.value === 'heatmap') {
         if (isHighZoom) {
             // At high zoom, use unclustered data for heatmap
             map.value.setLayoutProperty('clustered-points', 'visibility', 'none');
-            // map.value.setLayoutProperty('cluster-count', 'visibility', 'none');
-            // map.value.setLayoutProperty('individual-points', 'visibility', 'none');
             map.value.setLayoutProperty('unclustered-point', 'visibility', 'none');
             map.value.setLayoutProperty('heatmap-layer', 'visibility', 'none');
+            map.value.setLayoutProperty('high-zoom-clustered', 'visibility', 'none');
             map.value.setLayoutProperty('high-zoom-heatmap', 'visibility', 'visible');
         } else {
             // At low zoom, use clustered data for heatmap
             map.value.setLayoutProperty('clustered-points', 'visibility', 'none');
-            // map.value.setLayoutProperty('cluster-count', 'visibility', 'none');
-            // map.value.setLayoutProperty('individual-points', 'visibility', 'none');
             map.value.setLayoutProperty('unclustered-point', 'visibility', 'none');
             map.value.setLayoutProperty('heatmap-layer', 'visibility', 'visible');
+            map.value.setLayoutProperty('high-zoom-clustered', 'visibility', 'none');
             map.value.setLayoutProperty('high-zoom-heatmap', 'visibility', 'none');
         }
     }
